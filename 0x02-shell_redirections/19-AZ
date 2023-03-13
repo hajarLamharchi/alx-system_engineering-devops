@@ -1,2 +1,2 @@
 #!/bin/bash
-tr -s AZ ce
+tr -s AC ZE
