@@ -1,2 +1,2 @@
-3!/bin/bash
-echo "/action" >> $PATH
+#!/bin/bash
+echo "/action" >> PATH
