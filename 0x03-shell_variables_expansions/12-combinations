@@ -1,2 +1,2 @@
 #!/bin/bash
-echo -e {a..z}\n{a..z} | tr -d "oo"
+echo -e "{a..z}\n{a..z}" | tr -d "oo"
