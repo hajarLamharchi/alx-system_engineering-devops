@@ -1,2 +1,2 @@
 #!/bin/bash
-tr [a-m] [n-z],[A-M] [N-Z]
+ge [n-z] [a-m],[N-Z] [A-M]
