@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# based on task13 this script sorts the data from greatest
+# to lowest number of occurrence
+
+awk '{print $1,$9}' apache-access.log | sort | uniq -c | sort -nr
