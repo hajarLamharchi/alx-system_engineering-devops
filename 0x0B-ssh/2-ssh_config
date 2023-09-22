@@ -1,6 +1,7 @@
-#!/usr/bin/env bash
-# This script representes the configuration file
-
+# This script representes the ssh configuration file
 Host 370337-web-01
 	HostName 52.86.213.205
 	Port 22
+	User ubuntu
+	IdentityFile ~/.ssh/school
+	PasswordAuthentication no
