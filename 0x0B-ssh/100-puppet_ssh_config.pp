@@ -2,12 +2,12 @@
 
 file_line {'Turn off passwd auth':
   ensure => present,
-  path   => '/home/ubuntu/.ssh/config',
-  line   => 'PasswordAuthentication no'
+  path   => '/etc/ssh/ssh_config',
+  line   => '	PasswordAuthentication no'
 }
 
 file_line {'Declare identity file':
   ensure => present,
-  path   => '/home/ubuntu/.ssh/config',
-  line   => 'IdentityFile /home/vagrant/.ssh/school'
+  path   => '/etc/ssh/ssh_config',
+  line   => '	IdentityFile /home/vagrant/.ssh/school'
 }
