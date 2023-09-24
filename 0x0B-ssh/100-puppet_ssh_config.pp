@@ -5,10 +5,13 @@ $str = "Host 370337-web-01
 		HostName 52.86.213.205
 		Port 22
 		User ubuntu
-		IdentityFile ~/.ssh/school
+		IdentityFile /home/vagrant/.ssh/school
 		PasswordAuthentication no"
 
 file {'/home/ubuntu/.ssh/config':
-  ensure  => present,
+  ensure  => file,
+  owner   => 'ubuntu',
+  group   => 'ubuntu',
+  mode    => '0600',
   content => $str
 }
