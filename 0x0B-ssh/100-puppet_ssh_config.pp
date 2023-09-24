@@ -9,5 +9,6 @@ $str = "Host 370337-web-01
 		PasswordAuthentication no"
 
 file {'/home/ubuntu/.ssh/config':
+  ensure  => present,
   content => $str
 }
