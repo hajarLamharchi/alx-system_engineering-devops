@@ -8,6 +8,6 @@ $str = "Host 370337-web-01
 		IdentityFile ~/.ssh/school
 		PasswordAuthentication no"
 
-file {'/home/vagrant/.ssh/config':
+file {'/home/ubuntu/.ssh/config':
   content => $str
 }
