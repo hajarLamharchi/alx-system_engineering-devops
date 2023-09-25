@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# This script installs nginx web server
+
+sudo apt-get -y install nginx
+
+sudo chown -R ubuntu:ubuntu /var/www/html
+
+echo "Hello World!" > /var/www/html/index.html
