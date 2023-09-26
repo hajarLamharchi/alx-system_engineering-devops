@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# This script runs apache on the container
+
+cd /var/www/html
+echo "Hello Holberton" > index.html
