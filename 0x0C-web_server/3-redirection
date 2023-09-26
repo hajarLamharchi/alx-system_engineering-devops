@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 # This script configures nginx server to redirecte to another page
 
-new_conf="location {\n	return 301 https://www.youtube.com/watch?v=XqZsoesa55w;\n}"
-sudo sed -i 's/location/$new_conf/' /etc/nginx/sites-available/redirect_me
+sudo echo "server {
+		listen 80;
+		server_name localhost;
+		location /redirect_me {
+			return 301 https://www.youtube.com/watch?v=XqZsoesa55w;
+		}
+}" > /etc/nginx/sites-available/redirect_me
