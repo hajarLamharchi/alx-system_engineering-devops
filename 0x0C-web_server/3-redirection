@@ -8,3 +8,9 @@ sudo echo "server {
 			return 301 https://www.youtube.com/watch?v=XqZsoesa55w;
 		}
 }" > /etc/nginx/sites-available/redirect_me
+
+sudo ln -s /etc/nginx/sites-available/redirect_me /etc/nginx/sites-enabled/
+
+sudo rm -f /etc/nginx/sites-enabled/default
+
+sudo service nginx restart
