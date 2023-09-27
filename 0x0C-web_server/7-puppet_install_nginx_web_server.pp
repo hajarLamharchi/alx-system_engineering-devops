@@ -6,11 +6,16 @@ exec {'install':
 }
 
 file { '/var/www/html/index.html':
-  ensure => 'file',
+  ensure  => 'file',
   content => 'Hello World!',
 }
 
+exec {'redirect':
+  command  => "sudo sed -i 's/location \/ {/location \/redirect_me { return 301 https:\/\/www.youtube.com\/watch?v=XqZsoesa55w;/' /etc/nginx/sites-available/default",
+  provider => shell,
+}
+
 exec {'run':
-  command => 'sudo service nginx start',
+  command  => 'sudo service nginx start',
   provider => shell,
 }
