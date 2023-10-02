@@ -9,6 +9,12 @@ package {'nginx':
   ensure => 'installed',
 }
 
+service {'nginx':
+  ensure => 'running',
+  enable => true,
+  require => Package['nginx'],
+}
+
 exec {'http header response':
   command  => "sudo sed -i \"/listen 80 default_server;/a add_header X-Served-By '${hostname}';\" /etc/nginx/sites-available/default",
   provider => shell,
