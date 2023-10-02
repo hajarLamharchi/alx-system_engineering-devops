@@ -1,5 +1,7 @@
 # Creating a custom HTTP header response
 
+$hostname = $::hostname
+
 exec {'update':
   command  => 'sudo apt-get update',
   provider => shell,
