@@ -10,8 +10,8 @@ package {'nginx':
 }
 
 service {'nginx':
-  ensure => 'running',
-  enable => true,
+  ensure  => 'running',
+  enable  => true,
   require => Package['nginx'],
 }
 
@@ -19,9 +19,11 @@ exec {'http header response':
   command  => "sudo sed -i \"/listen 80 default_server;/a add_header X-Served-By '${hostname}';\" /etc/nginx/sites-available/default",
   provider => shell,
   require  => Package['nginx'],
+  notify   => Exec['nginx_restart'],
 }
 
-exec {'run':
-  command  => 'sudo service nginx restart',
-  provider => shell,
+exec {'nginx_restart':
+  command     => 'sudo service nginx restart',
+  provider    => shell,
+  refreshonly => true,
 }
