@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""Retrieves information about an employee todo list"""
+"""dumps information to a json file
+"""
 
 import json
 import requests
