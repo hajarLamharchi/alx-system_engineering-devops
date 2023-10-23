@@ -15,10 +15,10 @@ if __name__ == "__main__":
     todos = todo_res.json()
 
     employee_name = employee.get("name")
-    
+
     completed_tasks = []
     for task in todos:
-        if task["completed"] == True:
+        if task["completed"] is True:
             completed_tasks.append(task["title"])
 
     total_tasks = len(todos)
@@ -28,4 +28,3 @@ if __name__ == "__main__":
                                                           total_tasks))
     for task in completed_tasks:
         print("\t {}".format(task))
-
