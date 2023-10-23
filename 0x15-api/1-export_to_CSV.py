@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """Retrieves information about an employee todo list"""
+import csv
 import requests
 import sys
-import csv
+
 
 
 if __name__ == "__main__":
