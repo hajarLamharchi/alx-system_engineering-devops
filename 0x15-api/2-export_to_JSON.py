@@ -27,7 +27,7 @@ if __name__ == "__main__":
             "username": username
             })
 
-    json_dict = {employee_id: values)
+    json_dict = {employee_id: values}
 
     with open(json_file, "w") as f:
         json.dump(json_dict, f)
