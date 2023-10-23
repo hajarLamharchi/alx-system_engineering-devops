@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""dumps information to a json file
-"""
+"""retrievs information from an API and save as json file"""
 
 import json
 import requests
