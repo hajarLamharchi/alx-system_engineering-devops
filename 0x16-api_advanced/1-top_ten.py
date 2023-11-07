@@ -11,11 +11,11 @@ def top_ten(subreddit):
              }
     url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
 
-    response = requests.get(url, headers=headers)
+    response = requests.get(url, headers=headers, allow_redirects=False)
     try:
         data = response.json()
         for post in data['data']['children'][:10]:
             title = post['data']['title']
             print(title)
     except Exception:
-        print("None")
+        print(None)
