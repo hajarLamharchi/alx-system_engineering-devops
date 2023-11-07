@@ -17,5 +17,5 @@ def top_ten(subreddit):
         for post in data['data']['children'][:10]:
             title = post['data']['title']
             print(title)
-    except KeyError:
-        print(None)
+    except Exception:
+        print("None")
