@@ -1,7 +1,8 @@
 # web stuck debugging using strace, fixing the issue and automate it
 
-file {'/var/www/html/wp-settings.php':
+$file_path = '/var/www/html/wp-settings.php'
+
+file { $file_path:
   ensure  => 'present',
-  match   => '.*\.phpp.*',
-  replace => 's/\.phpp/\.php/',
+  content => inline_template("<%= File.read('#{$filepath}').gsub('phpp', 'php') %>"),
 }
