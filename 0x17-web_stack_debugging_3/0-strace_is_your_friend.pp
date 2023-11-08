@@ -2,6 +2,6 @@
 
 file_line {'replace':
   path    => '/var/www/html/wp-settings.php',
-  match   => 'phpp',
-  replace => 'php',
+  match   => '.*\.phpp.*',
+  replace => 's/\.phpp/\.php/',
 }
