@@ -1,13 +1,15 @@
+# configure gunicorn to start by default and serve the HbNb application
+
 [Unit]
 Description=Gunicorn process to serve the HbNb application
 After=network.target
 
 [Service]
 ExecStart=/home/ubuntu/.local/bin/gunicorn -w 3 -b 0.0.0.0:5003 web_dynamic.2-hbnb:app
-StandardError=file:/tmp/airbnb-error.log
-StandardOutput=file:/tmp/airbnb-access.log
 User=ubuntu
 Group=ubuntu
+StandardError=file:/tmp/airbnb-error.log
+StandardOutput=file:/tmp/airbnb-access.log
 WorkingDirectory=/home/ubuntu/AirBnB_clone_v4
 Restart=always
 Environment="HBNB_MYSQL_USER=hbnb_dev"
