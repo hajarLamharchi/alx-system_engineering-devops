@@ -1,14 +1,16 @@
 # puppet manifest to change the limit of file descriptor
 
-file { '/etc/default/nginx':
+class main {
+  file { '/etc/default/nginx':
   ensure  => file,
   content => "ULIMIT='-n 4096'\n",
-  owner   => 'root',
-  group   => 'root',
-  mode    => '0644',
+  subscribe  => Exec['restart-nginx'],
+  }
+
+  exec { 'restart-nginx':
+    command     => '/usr/bin/sudo /usr/bin/service nginx restart',
+    refreshonly => true,
+  }
 }
 
-exec { 'restart nginx':
-  command     => '/usr/bin/sudo /usr/bin/service nginx restart',
-  refreshonly => true,
-}
+include main
