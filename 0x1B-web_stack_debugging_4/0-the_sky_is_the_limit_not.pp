@@ -3,6 +3,8 @@
 file { '/etc/default/nginx':
   ensure  => file,
   content => "ULIMIT='-n 4096'\n",
+  owner   => 'root',
+  group   => 'root',
   mode    => '0644',
 }
 
