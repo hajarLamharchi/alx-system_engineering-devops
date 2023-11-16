@@ -3,6 +3,6 @@
 file_line { 'increase_ulimit':
   ensure  => present,
   path    => '/etc/default/nginx',
-  line    => 'ULIMIT="-n 15"',
-  replace => 'ULIMIT="-n 4096"',
+  match   => 'ULIMIT="-n 15"',
+  line    => 'ULIMIT="-n 4096"',
 }
