@@ -2,5 +2,5 @@
 
 file { '/etc/default/nginx':
   ensure  => file,
-  content => inline_template("# /etc/default/nginx\n<%= 'ulimit -n 4096' %>\n"),
+  content => 'ULIMIT="-n 4096"\n',
 }
