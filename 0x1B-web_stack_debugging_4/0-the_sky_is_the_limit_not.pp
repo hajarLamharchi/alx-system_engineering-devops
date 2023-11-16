@@ -7,4 +7,5 @@ file { '/etc/default/nginx':
 
 exec { 'restart nginx':
   command     => '/usr/bin/sudo /usr/bin/service nginx restart',
+  refreshonly => true,
 }
