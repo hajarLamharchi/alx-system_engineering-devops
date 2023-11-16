@@ -6,5 +6,5 @@ file { '/etc/default/nginx':
 }
 
 exec { 'restart nginx':
-  command     => 'sudo service nginx restart',
+  command     => '/usr/bin/sudo /usr/bin/service nginx restart',
 }
